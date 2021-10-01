@@ -1,13 +1,161 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Titan+One&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 80vh;
+  height: auto;
+  background-image: url("./img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Titan One", cursive;
+}
+
+.box {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.radio {
+  border: 5px solid black !important;
+}
+
+label,
+input {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  background: transparent;
+  font-weight: bold;
+}
+
+.title {
+  padding: 8rem 0;
+  text-align: center;
+  color: white;
+  background-image: url("./img/popup-bg.png");
+  background-size: cover;
+}
+
+.container {
+  background: linear-gradient(
+    120.57deg,
+    #15c7ff 18.47%,
+    rgba(184, 184, 184, 0) 113.45%
+  );
+  min-height: 50vh;
+  position: relative;
+}
+
+.score {
+  margin-top: 2rem;
+}
+
+.score p {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.button-popup {
+  margin-top: 8rem;
+}
+
+.button-popup a {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2rem 3.5rem;
+  border-radius: 4rem;
+  color: white;
+  font-family: "Titan One", cursive;
+  font-size: 2.4rem;
+}
+
+.container img {
+  position: absolute;
+  max-width: 20rem;
+  width: 100%;
+}
+
+.annanas {
+  right: -20%;
+  bottom: 30%;
+}
+
+.jajko {
+  bottom: -15%;
+  right: -24%;
+  max-width: 30rem !important;
+}
+
+.kebab {
+  left: -15%;
+  bottom: -20%;
+  max-width: 25rem !important;
+}
+
+.unset {
+  transform: unset !important;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    background-size: unset;
+  }
 }

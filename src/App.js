@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MainPage from "./screens/MainPage";
+import { Route, Switch, useLocation } from "react-router-dom";
+import QuestionPage from "./screens/QuestionPage";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence>
+      <Switch location={location} key={location.key}>
+        <Route path="/" component={MainPage} exact />
+        <Route path="/question/:id" component={QuestionPage} />
+      </Switch>
+    </AnimatePresence>
   );
 }
 
