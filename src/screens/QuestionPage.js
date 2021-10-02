@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box } from "../components/Box";
@@ -68,8 +70,11 @@ const QuestionButton = styled(Link)`
 const QuestionPage = ({ match }) => {
   const id = match.params.id;
 
+  const dispatch = useDispatch();
+
+  const score = useSelector((state) => state.score);
+
   const [currentAnswer, setcurrentAnswer] = useState("");
-  const [score, setScore] = useState(0);
   const [buttonPopup, setButtonPopup] = useState(false);
 
   useEffect(() => {
@@ -80,7 +85,7 @@ const QuestionPage = ({ match }) => {
 
   const nextHandler = () => {
     if (currentAnswer === questions[id].answer) {
-      setScore(score + 1);
+      dispatch({ type: "INCREASE" });
     }
 
     setcurrentAnswer("");
@@ -94,7 +99,7 @@ const QuestionPage = ({ match }) => {
 
   const endHandler = (e) => {
     if (currentAnswer === questions[id].answer) {
-      setScore(score + 1);
+      dispatch({ type: "INCREASE" });
     }
     e.preventDefault();
     setButtonPopup(true);
@@ -115,7 +120,7 @@ const QuestionPage = ({ match }) => {
       <Box>
         <Image
           animate={{ top: "-20%" }}
-          transition={{ yoyo: Infinity, duration: 1 }}
+          transition={{ repeat: Infinity, repeatType: "reverse", duration: 1 }}
           src={questions[id].image}
         />
         <QuestionContainer>

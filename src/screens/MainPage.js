@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Begin } from "../components/Begin";
 import { Box } from "../components/Box";
 import { Image } from "../components/BoxImage";
@@ -7,6 +8,14 @@ import { Button } from "../components/Button";
 import Title from "../components/Title";
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: "RESET" });
+    }, 1000);
+  }, [dispatch]);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.3 }}
@@ -24,7 +33,7 @@ const MainPage = () => {
         {" "}
         <Image
           animate={{ top: "-20%" }}
-          transition={{ yoyo: Infinity, duration: 1 }}
+          transition={{ repeat: Infinity, repeatType: "reverse", duration: 1 }}
           src={"./img/autro.svg"}
         />
         <Button to="question/0">Let's Begin</Button>
