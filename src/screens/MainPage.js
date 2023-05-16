@@ -43,35 +43,35 @@ const MainPage = () => {
             animate={{ top: 500 }}
             transition={{ ease: "linear", duration: 2, repeat: Infinity }}
           >
-            Let's Begin
+            Let's&nbsp;Begin
           </Begin>
           <Begin
             right={"50%"}
             animate={{ top: 400 }}
             transition={{ ease: "linear", duration: 9, repeat: Infinity }}
           >
-            Let's Begin
+            Let's&nbsp;Begin
           </Begin>
           <Begin
             right={"70%"}
             animate={{ top: 500 }}
             transition={{ ease: "linear", duration: 2, repeat: Infinity }}
           >
-            Let's Begin
+            Let's&nbsp;Begin
           </Begin>
           <Begin
             right={"90%"}
             animate={{ top: 400 }}
             transition={{ ease: "linear", duration: 6, repeat: Infinity }}
           >
-            Let's Begin
+            Let's&nbsp;Begin
           </Begin>
           <Begin
             right={"20%"}
             animate={{ top: 500 }}
             transition={{ ease: "linear", duration: 5, repeat: Infinity }}
           >
-            Let's Begin
+            Let's&nbsp;Begin
           </Begin>
         </div>
       </Box>
